@@ -11,6 +11,7 @@ SECTION_START = 8
 SECTION_ELEMENT = 9
 SECTION_CODE = 10
 SECTION_DATA = 11
+SECTION_USER = 0
 
 TYPE_i32 = 0x7f
 TYPE_i64 = 0x7e
@@ -26,3 +27,9 @@ KIND_GLOBAL = 3
 
 def CONST_i32(value):
     return varuint(0x41) + varuint(value) + '\x0b'
+
+def CONST_i64(value):
+    return varuint(0x42) + varuint(value) + '\x0b'
+
+MUTABLE = 1
+IMMUTABLE = 0

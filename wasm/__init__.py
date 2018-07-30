@@ -5,6 +5,8 @@ from wasm.impo import ImportSection
 from wasm.impo import ImportEntry
 from wasm.memory import MemorySection
 from wasm.memory import MemoryEntry
+from wasm.glob import GlobalSection
+from wasm.glob import GlobalEntry
 from wasm.table import TableSection
 from wasm.table import TableEntry
 from wasm.data import DataSection
@@ -17,4 +19,5 @@ from wasm.code import CodeSection
 from wasm.code import CodeEntry
 from wasm.function import FunctionSection
 from wasm.function import FunctionEntry
+from wasm.user import UserSection
 from wasm.const import *
