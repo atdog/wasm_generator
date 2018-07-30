@@ -8,8 +8,11 @@ m = Module(
             TypeEntry(TYPE_FUNC, (TYPE_i64, TYPE_i64, TYPE_i64), ()), # type index 0
             TypeEntry(TYPE_FUNC, (TYPE_i64, TYPE_i64, TYPE_i64), ()), # type index 1
             TypeEntry(TYPE_FUNC, (TYPE_i64, TYPE_i64, TYPE_i64), ()), # type index 2
-            TypeEntry(TYPE_FUNC, (TYPE_i64, TYPE_i64, TYPE_i64), ()), # type index 2
+            TypeEntry(TYPE_FUNC, (TYPE_i64, ), ()), # type index 2
             ]),
+        ImportSection([
+            ImportEntry('env', 'test', KIND_FUNCTION, 2), # function type[2]
+	    ]),
         FunctionSection([
             FunctionEntry(0), # function index 0 -> type[0]
             FunctionEntry(1), # function index 1 -> type[1]
