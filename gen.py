@@ -12,8 +12,8 @@ m = Module(
             ]),
         FunctionSection([
             FunctionEntry(0), # function index 0 -> type[0]
-            FunctionEntry(1), # function index 0 -> type[1]
-            FunctionEntry(1), # function index 0 -> type[1]
+            FunctionEntry(1), # function index 1 -> type[1]
+            FunctionEntry(1), # function index 2 -> type[1]
             ]),
         TableSection([
             # 1024 is constraint
@@ -24,15 +24,15 @@ m = Module(
             MemoryEntry(528), # memory index 0
             ]),
         ExportSection([
-            ExportEntry(KIND_FUNCTION, 'apply', 0),
+            ExportEntry(KIND_FUNCTION, 'apply', 0), # points to function 0
             ]),
         ElemSection([
             ElemEntry(0, CONST_i32(0), [0, 1, 2]),
             ]),
         CodeSection([
-            CodeEntry({TYPE_i32: 2, TYPE_i64: 1}, ''),
-            CodeEntry({}, ''),
-            CodeEntry({TYPE_i32: 2}, ''),
+            CodeEntry({TYPE_i32: 2, TYPE_i64: 1}, ''),  # function 0
+            CodeEntry({}, ''),                          # function 1
+            CodeEntry({TYPE_i32: 2}, ''),               # function 2
             ]),
         DataSection([
             DataEntry(0, CONST_i32(1), 'test string\x00'),
