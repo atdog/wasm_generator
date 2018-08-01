@@ -1,7 +1,3 @@
-
-def varuint(num):
-    return varuint_(num)
-
 def varuint(num):
     binstr = ''
     pad = '0'
