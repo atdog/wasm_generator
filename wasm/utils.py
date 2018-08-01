@@ -6,9 +6,10 @@ def varuint(num):
     binstr = ''
     pad = '0'
     if num < 0:
-        p_binstr = '{:b}'.format(-num);
-        binstr = '{:b}'.format(~num + 1);
-        binstr.rjust(len(p_binstr), '0')
+        num = -num
+        len_bits = len('{:b}'.format(num))
+        binstr = '{:b}'.format((~num + 1) & 0xffffffffffffffff);
+        binstr = binstr[-len_bits:]
         pad = '1'
     else:
         binstr = '{:b}'.format(num);
