@@ -21,3 +21,4 @@ from wasm.function import FunctionSection
 from wasm.function import FunctionEntry
 from wasm.user import UserSection
 from wasm.const import *
+from wasm.inst import *
